@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 from selenium import webdriver
 from requests_html import HTMLSession
 
-from webdriver_manager.chrome import ChromeDriverManager
+#from webdriver_manager.chrome import ChromeDriverManager
 
 
 # Get the values  from the command line arguments
@@ -26,8 +26,8 @@ def screen_message(msg: str):
         f.write(str(datetime.utcnow()) + " | " + msg +'\n')
 
 def scrap_page(url: str, clicks: int = 1):
-    driver = webdriver.Chrome(ChromeDriverManager().install())
-    #driver = webdriver.Chrome()
+    #driver = webdriver.Chrome(ChromeDriverManager().install())
+    driver = webdriver.Chrome()
     driver.get(url)
     if url == 'https://www.real.discount/udemy-coupon-code/':
         button = driver.find_element(by='css selector', value="input.btn.btn-primary[onclick='load_all(2)']")
